@@ -1,0 +1,682 @@
+{
+  "meta": {
+    "siteDescription": "APLOMB, a real estate agency dedicated to architect-designed houses, lofts and 20th-century heritage. Paris, Lyon, Basque Coast.",
+    "titles": {
+      "home": "Architectural real estate",
+      "properties": "Properties for sale",
+      "architects": "Architects",
+      "sell": "Sell an architect-designed house",
+      "agency": "The agency",
+      "journal": "Journal",
+      "selection": "My shortlist",
+      "contact": "Contact",
+      "faq": "Frequently asked questions",
+      "owners": "Owner area",
+      "legal": "Legal notice",
+      "privacy": "Privacy policy",
+      "cookies": "Cookie policy",
+      "terms": "Terms of use",
+      "fees": "Fee schedule",
+      "accessibility": "Accessibility",
+      "sitemap": "Site map"
+    },
+    "descriptions": {
+      "properties": "Architect-designed houses, modernist villas, lofts and exceptional penthouses for sale in France. Plans, 3D models and the story of each property.",
+      "architects": "The architects whose work APLOMB represents: Hélène Vasseur, Studio Ordinal, Kenji Arnaud, Atelier Lune, Bruno Salvat.",
+      "sell": "Entrust the sale of your architect-designed house to an agency that knows how to tell its story. Free online valuation.",
+      "agency": "Founded in 2009 by an architect, APLOMB sells houses for their architecture. Three offices: Paris, Lyon, Biarritz.",
+      "journal": "Guides, materials, places: APLOMB's journal on domestic architecture.",
+      "contact": "Contact APLOMB in Paris, Lyon or Biarritz about buying or selling.",
+      "faq": "Buying, selling, fees: answers to the most frequent questions."
+    }
+  },
+  "nav": {
+    "skip": "Skip to content",
+    "home": "Home",
+    "main": "Main navigation",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "Language",
+    "selectionCount": "My shortlist ({count, plural, =0 {empty} one {# property} other {# properties}})",
+    "properties": "Properties",
+    "architects": "Architects",
+    "sell": "Sell",
+    "agency": "Agency",
+    "journal": "Journal",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "owners": "Owner area",
+    "propertiesHint": "9 addresses",
+    "architectsHint": "the authors",
+    "sellHint": "free valuation",
+    "agencyHint": "since 2009",
+    "journalHint": "read",
+    "contactHint": "let's talk",
+    "legal": {
+      "legal": "Legal notice",
+      "privacy": "Privacy",
+      "cookies": "Cookie policy",
+      "terms": "Terms",
+      "fees": "Fees",
+      "accessibility": "Accessibility",
+      "sitemap": "Site map"
+    }
+  },
+  "common": {
+    "close": "Close",
+    "backHome": "Back to home",
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "discover": "Discover",
+    "prev": "Previous",
+    "next": "Next",
+    "webglFallback": "The 3D model requires WebGL, which is not available in this browser.",
+    "sqm": "m²",
+    "rooms": "{count, plural, one {# room} other {# rooms}}",
+    "bedrooms": "{count, plural, one {# bedroom} other {# bedrooms}}",
+    "bathrooms": "{count, plural, one {# bathroom} other {# bathrooms}}",
+    "minutesRead": "{count} min read",
+    "by": "by {name}",
+    "view": "View",
+    "drag": "Drag",
+    "addSelection": "Add to my shortlist",
+    "removeSelection": "Remove from my shortlist",
+    "addedSelection": "“{title}” added to your shortlist",
+    "removedSelection": "“{title}” removed from your shortlist",
+    "addCompare": "Compare",
+    "removeCompare": "Stop comparing",
+    "compareFull": "You can compare up to 3 properties",
+    "copyLink": "Copy link",
+    "linkCopied": "Link copied to clipboard",
+    "share": "Share",
+    "status": {
+      "available": "Available",
+      "exclusive": "Exclusive",
+      "underOffer": "Under offer",
+      "sold": "Sold"
+    },
+    "types": {
+      "villa": "Villa",
+      "house": "House",
+      "loft": "Loft",
+      "apartment": "Apartment"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Architectural real estate — Paris · Lyon · Basque Coast",
+      "title": "The true",
+      "accent": "line.",
+      "intro": "We sell houses for what they really are: works of architecture. Plans, models, story — every address is presented the way it was conceived.",
+      "cta": "View properties",
+      "cta2": "Get a valuation",
+      "scroll": "Scroll to explode the model",
+      "day": "Day",
+      "night": "Night",
+      "model": "Model",
+      "blueprint": "Blueprint",
+      "sceneLabel": "3D model of an architect-designed concrete and glass house with a pool, separating floor by floor as you scroll.",
+      "levels": [
+        "L0 · Living 92 m²",
+        "L1 · Bedrooms 118 m²",
+        "L2 · Studio 46 m²"
+      ],
+      "sheet": {
+        "project": "Project",
+        "projectValue": "Villa type A",
+        "scale": "Scale",
+        "levels": "Levels",
+        "exploded": "Exploded",
+        "sheet": "Sheet"
+      }
+    },
+    "marquee": [
+      "Architect-designed houses",
+      "Lofts",
+      "Modernist villas",
+      "Penthouses",
+      "20th-century heritage",
+      "Off-market",
+      "Rehabilitations"
+    ],
+    "manifesto": {
+      "eyebrow": "Manifesto",
+      "text": "An architect-designed house isn't sold by the square metre. It is sold by the light falling on a wall at four in the afternoon, by the proportion of a living room, by the intelligence of a plan. Since 2009, we learn every house before we show it.",
+      "signature": "Camille Arendt, founder"
+    },
+    "featured": {
+      "eyebrow": "Selection",
+      "title": "Current addresses",
+      "accent": "chosen one by one",
+      "intro": "Every property is visited, measured, redrawn and told by our team before it is offered.",
+      "cta": "All properties",
+      "drag": "Scroll"
+    },
+    "stats": {
+      "eyebrow": "In figures",
+      "items": [
+        {
+          "value": 17,
+          "suffix": "",
+          "label": "years of experience"
+        },
+        {
+          "value": 340,
+          "suffix": "",
+          "label": "houses passed on"
+        },
+        {
+          "value": 62,
+          "suffix": "",
+          "label": "partner architects"
+        },
+        {
+          "value": 74,
+          "suffix": " d",
+          "label": "average time to sell"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Method",
+      "title": "Four steps",
+      "accent": "to a house well sold",
+      "steps": [
+        {
+          "title": "Survey",
+          "text": "In-depth visit, measured survey, gathering of the architect's drawings and archives.",
+          "duration": "D+7"
+        },
+        {
+          "title": "Redraw",
+          "text": "Redrawn plans, 3D digital model, photo shoot in natural light.",
+          "duration": "D+21"
+        },
+        {
+          "title": "Tell",
+          "text": "The story of the house, a meeting with the architect, targeted and off-market marketing.",
+          "duration": "D+30"
+        },
+        {
+          "title": "Pass on",
+          "text": "Qualified viewings, negotiation, support through to the deed of sale.",
+          "duration": "D+74"
+        }
+      ]
+    },
+    "planToStone": {
+      "eyebrow": "From plan to stone",
+      "title": "Understand before you visit",
+      "accent": "drag to reveal",
+      "text": "Our redrawn plans let buyers read the house before stepping inside. The result: fewer viewings, but decisive ones.",
+      "before": "Plan",
+      "after": "Reality",
+      "handle": "Drag to compare the plan and the photograph"
+    },
+    "architects": {
+      "eyebrow": "Signatures",
+      "title": "The authors",
+      "accent": "behind the walls",
+      "intro": "We represent the work of architects we admire, and work with them on every sale.",
+      "cta": "All architects"
+    },
+    "testimonials": {
+      "eyebrow": "They entrusted us with their house",
+      "title": "In their words"
+    },
+    "journal": {
+      "eyebrow": "Journal",
+      "title": "Reading architecture",
+      "cta": "All articles"
+    },
+    "cta": {
+      "eyebrow": "Sell",
+      "title": "Was your house designed",
+      "accent": "by an architect?",
+      "text": "Receive a reasoned valuation, free and with no commitment, within 72 hours.",
+      "button": "Value my house"
+    }
+  },
+  "properties": {
+    "eyebrow": "Catalogue",
+    "title": "Properties for sale",
+    "accent": "9 authored addresses",
+    "intro": "Architect-designed houses, modernist villas, lofts and penthouses. Filter, compare, save — and request a viewing with the architect.",
+    "filters": {
+      "title": "Filters",
+      "type": "Type",
+      "all": "All",
+      "area": "Region",
+      "allAreas": "All regions",
+      "price": "Budget",
+      "priceMin": "Minimum price",
+      "priceMax": "Maximum price",
+      "surface": "Minimum area",
+      "bedrooms": "Bedrooms",
+      "any": "Any",
+      "architect": "Architect",
+      "allArchitects": "All architects",
+      "hideSold": "Hide sold properties",
+      "reset": "Reset",
+      "results": "{count, plural, =0 {No properties} one {# property} other {# properties}}",
+      "sort": "Sort",
+      "show": "Show filters",
+      "hide": "Hide filters"
+    },
+    "sort": {
+      "featured": "Featured",
+      "priceAsc": "Price, low to high",
+      "priceDesc": "Price, high to low",
+      "surfaceDesc": "Area",
+      "recent": "Most recent build"
+    },
+    "views": {
+      "grid": "Grid",
+      "list": "List",
+      "map": "Map"
+    },
+    "empty": "No property matches these criteria. Some of our listings are offered offline: tell us about your project.",
+    "emptyCta": "Create an alert",
+    "mapHint": "Hover a marker to show the property",
+    "mapLabel": "Map of France showing properties for sale",
+    "compare": {
+      "title": "Compare",
+      "selected": "{count, plural, one {# property selected} other {# properties selected}}",
+      "open": "Compare",
+      "clear": "Clear",
+      "remove": "Remove",
+      "price": "Price",
+      "pricePerSqm": "Price per m²",
+      "surface": "Living area",
+      "land": "Land",
+      "bedrooms": "Bedrooms",
+      "year": "Built",
+      "architect": "Architect",
+      "energy": "Energy rating",
+      "location": "Location"
+    }
+  },
+  "property": {
+    "back": "All properties",
+    "sections": {
+      "overview": "Overview",
+      "plan": "Plan",
+      "model": "3D model",
+      "gallery": "Gallery",
+      "financing": "Financing",
+      "visit": "Viewing"
+    },
+    "price": "Price",
+    "perSqm": "{price} / m²",
+    "feesIncluded": "Fees included, paid by the seller",
+    "keyFigures": "Key figures",
+    "surface": "Living area",
+    "land": "Land",
+    "terrace": "Terraces",
+    "rooms": "Rooms",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "year": "Built",
+    "renovated": "Renovated",
+    "architect": "Architect",
+    "reference": "Reference",
+    "features": "Highlights",
+    "energyTitle": "Energy performance certificate",
+    "energyLabel": "Energy consumption",
+    "ghgLabel": "Greenhouse gas emissions",
+    "energyUnit": "kWh/m²/yr",
+    "ghgUnit": "kg CO₂/m²/yr",
+    "energyNote": "Efficient ← → Inefficient. Estimated annual energy costs available on request.",
+    "planTitle": "Floor plan",
+    "planHint": "Hover a room to show its area",
+    "planTotal": "Level area",
+    "planNote": "Plan redrawn by APLOMB, non-contractual.",
+    "planLabel": "Interactive plan: {label}",
+    "modelTitle": "Digital model",
+    "modelHint": "Rotate the model, explode the levels, switch to night view.",
+    "modelLabel": "Interactive 3D model of {title}",
+    "controls": {
+      "day": "Day",
+      "night": "Night",
+      "explode": "Explode",
+      "assemble": "Assemble",
+      "model": "Model",
+      "blueprint": "Blueprint"
+    },
+    "levelLabel": "Level {n}",
+    "galleryTitle": "Gallery",
+    "viewPhotos": "View all {count} photos",
+    "photoAlt": "{title} — photo {n}",
+    "mortgage": {
+      "title": "Estimate your financing",
+      "intro": "An indicative estimate of your monthly payment, excluding borrower insurance.",
+      "price": "Property price",
+      "deposit": "Deposit",
+      "duration": "Term",
+      "years": "{count} years",
+      "rate": "Nominal rate",
+      "monthly": "Estimated monthly payment",
+      "perMonth": "/ month",
+      "loan": "Loan amount",
+      "notary": "Estimated notary fees",
+      "interest": "Total interest",
+      "total": "Total budget",
+      "disclaimer": "Non-contractual simulation. A loan is a commitment and must be repaid. Check your repayment capacity before committing."
+    },
+    "visit": {
+      "title": "Request a viewing",
+      "intro": "Pick a slot: we'll call you back within one business day to confirm. Viewings are accompanied by an advisor and, whenever possible, the architect.",
+      "slot": "Preferred slot",
+      "slotPlaceholder": "Choose a slot",
+      "withArchitect": "I would like to meet the architect",
+      "success": "Request sent. We'll call you within 24 hours to confirm your viewing of “{title}”."
+    },
+    "architectCard": {
+      "title": "The architect",
+      "cta": "Discover their work"
+    },
+    "similar": "You may also like",
+    "soldNote": "This property has been sold. It remains on show for its architecture — other houses by the same author may be offered offline.",
+    "brochure": "Get the brochure",
+    "brochureSent": "The brochure for “{title}” will be emailed to you."
+  },
+  "architectsPage": {
+    "eyebrow": "Signatures",
+    "title": "Architects",
+    "accent": "the authors we represent",
+    "intro": "We don't sell floor space, we sell works. These are the architects whose houses we look after, often since their very first sale.",
+    "since": "Practice founded in {year}",
+    "based": "Based in {city}",
+    "materials": "Materials",
+    "properties": "{count, plural, =0 {No property for sale} one {# property for sale} other {# properties for sale}}",
+    "viewProperties": "View their properties",
+    "join": {
+      "title": "Are you an architect?",
+      "text": "Do your clients wish to sell a house you designed? We'd be glad to talk it through with you.",
+      "cta": "Write to us"
+    },
+    "baseLabel": "Based in",
+    "sinceLabel": "Since"
+  },
+  "sell": {
+    "eyebrow": "Sell",
+    "title": "An authored house",
+    "accent": "deserves a story",
+    "intro": "We turn down about half of the listings we're offered. Those we accept, we sell in 74 days on average, at the asking price.",
+    "why": {
+      "title": "What we do differently",
+      "items": [
+        {
+          "title": "Redrawn plans",
+          "text": "A full survey, legible plans and a 3D model for every exclusive listing."
+        },
+        {
+          "title": "The architect on board",
+          "text": "We contact the house's author or their estate to document its history."
+        },
+        {
+          "title": "Chosen exposure",
+          "text": "A network of qualified buyers, selective publications, and off-market whenever you wish."
+        }
+      ]
+    },
+    "form": {
+      "title": "Online valuation",
+      "intro": "Three steps, two minutes. You get a first range immediately, then a detailed valuation after a visit.",
+      "steps": [
+        "The property",
+        "Its qualities",
+        "Your details"
+      ],
+      "step": "Step {n} of {total}",
+      "type": "Property type",
+      "city": "Town",
+      "cityPlaceholder": "e.g. Biarritz",
+      "surface": "Living area (m²)",
+      "land": "Land (m²)",
+      "year": "Year built",
+      "architect": "Architect (if known)",
+      "architectPlaceholder": "e.g. Hélène Vasseur",
+      "condition": "Overall condition",
+      "conditions": {
+        "new": "New / recent",
+        "good": "Very good",
+        "refresh": "Needs refreshing",
+        "renovate": "Needs renovation"
+      },
+      "view": "Outstanding view",
+      "pool": "Swimming pool",
+      "listed": "Listed or protected work",
+      "timing": "Selling timeframe",
+      "timings": {
+        "now": "As soon as possible",
+        "six": "Within 6 months",
+        "year": "Within a year",
+        "thinking": "Just exploring"
+      },
+      "back": "Back",
+      "continue": "Continue",
+      "submit": "Get my valuation"
+    },
+    "result": {
+      "eyebrow": "First range",
+      "title": "Your house could sell for between",
+      "and": "and",
+      "note": "Indicative range based on sales of comparable properties. An advisor will contact you within 72 hours to arrange a visit and refine this valuation.",
+      "restart": "New valuation"
+    }
+  },
+  "agency": {
+    "eyebrow": "The agency",
+    "title": "Founded by",
+    "accent": "an architect",
+    "intro": "APLOMB was born of frustration: seeing remarkable houses sold like any other property, described by their number of bedrooms. We chose the opposite.",
+    "manifesto": "Aplomb: plumb, true, balanced. It is the question we ask of every house, and of every decision we make.",
+    "values": {
+      "title": "What guides us",
+      "items": [
+        {
+          "title": "Accuracy",
+          "text": "A reasoned price, neither inflated to win the listing nor cut to sell fast."
+        },
+        {
+          "title": "Knowledge",
+          "text": "A team made up half of architects and architectural historians."
+        },
+        {
+          "title": "Discretion",
+          "text": "A third of our sales happen without advertising, at the owners' request."
+        },
+        {
+          "title": "Transmission",
+          "text": "Every house changes hands with its plans, its archives and its story."
+        }
+      ]
+    },
+    "timeline": "Milestones",
+    "team": "The team",
+    "teamIntro": "Architects, historians, negotiators: profiles rarely found in real estate.",
+    "offices": "Our offices",
+    "officesIntro": "Three addresses, three territories. Meet us in person or by video.",
+    "speaks": "Languages: {languages}"
+  },
+  "journal": {
+    "eyebrow": "Journal",
+    "title": "Reading architecture",
+    "accent": "agency notebooks",
+    "intro": "Practical guides, materials, places and the stories of houses.",
+    "all": "All",
+    "featured": "Featured",
+    "read": "Read the article",
+    "back": "Back to the journal",
+    "related": "Read next",
+    "published": "Published {date}",
+    "progress": "Reading progress"
+  },
+  "selection": {
+    "eyebrow": "My shortlist",
+    "title": "Saved properties",
+    "accent": "on this device",
+    "intro": "Your shortlist is kept in your browser, with no account or sign-up.",
+    "empty": "Your shortlist is empty for now. Use the bookmark on listings to save a property.",
+    "emptyCta": "Browse properties",
+    "clear": "Clear shortlist",
+    "cleared": "Shortlist cleared",
+    "contact": "Get a call about these properties",
+    "total": "Combined value"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk",
+    "accent": "about your project",
+    "intro": "Buying, selling or just a question: write to us and we'll reply within one business day.",
+    "formTitle": "Write to the agency",
+    "success": "Thank you, your message has been sent. We'll reply within one business day.",
+    "offices": "Our offices",
+    "directions": "Directions",
+    "or": "or call us",
+    "alert": "Create an off-market alert",
+    "alertText": "Describe your criteria in the message: you'll hear about matching houses before any public listing."
+  },
+  "faqPage": {
+    "eyebrow": "Questions",
+    "title": "Frequently asked questions",
+    "accent": "and straight answers",
+    "intro": "Everything we're most often asked, before buying or selling.",
+    "still": "Another question?",
+    "stillText": "Our team will reply within one business day.",
+    "stillCta": "Contact us"
+  },
+  "legalPages": {
+    "eyebrow": "Legal information",
+    "updated": "Last updated: {date}",
+    "toc": "Contents",
+    "manageCookies": "Manage my cookie preferences",
+    "cookieTable": {
+      "name": "Name",
+      "purpose": "Purpose",
+      "duration": "Duration",
+      "category": "Category"
+    },
+    "feesTable": {
+      "range": "Sale price",
+      "fee": "Fees incl. VAT"
+    },
+    "feesExample": "Example: for a house sold for €1,200,000, fees amount to €54,000 incl. VAT (4.5%).",
+    "print": "Print"
+  },
+  "sitemapPage": {
+    "eyebrow": "Navigation",
+    "title": "Site map",
+    "main": "Main pages",
+    "properties": "Properties",
+    "architects": "Architects",
+    "journal": "Journal",
+    "legal": "Legal information"
+  },
+  "cookies": {
+    "title": "Cookies",
+    "text": "We use cookies required for the site to work and, with your consent, audience measurement and marketing cookies.",
+    "learnMore": "Learn more",
+    "rejectAll": "Reject all",
+    "acceptAll": "Accept all",
+    "customize": "Customise",
+    "modalTitle": "Your preferences",
+    "modalText": "Choose which categories of cookies you accept. You can change this at any time from the footer.",
+    "save": "Save",
+    "saved": "Your preferences have been saved",
+    "alwaysOn": "Always on",
+    "categories": {
+      "necessary": {
+        "title": "Necessary",
+        "text": "Language, consent, property shortlist. Essential for the site to work."
+      },
+      "analytics": {
+        "title": "Audience measurement",
+        "text": "Anonymised statistics to understand and improve how the site is used."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "text": "Measuring the effectiveness of our social media campaigns."
+      }
+    }
+  },
+  "footer": {
+    "title": "Every house",
+    "titleAccent": "has an author.",
+    "text": "Architectural real estate agency since 2009. Architect-designed houses, lofts, modernist villas and 20th-century heritage.",
+    "newsletterLabel": "The APLOMB letter — one house a month",
+    "newsletterPlaceholder": "your@email.com",
+    "newsletterSubmit": "Subscribe",
+    "newsletterConsent": "I agree to receive the monthly letter. Unsubscribe in one click.",
+    "newsletterSuccess": "Subscription confirmed. Your first letter arrives next month.",
+    "explore": "Explore",
+    "offices": "Offices",
+    "manageCookies": "Cookies",
+    "backToTop": "Back to top",
+    "card": "Licence",
+    "since": "True since {year}"
+  },
+  "forms": {
+    "civility": "Title",
+    "civilities": {
+      "mrs": "Ms",
+      "mr": "Mr",
+      "other": "Other"
+    },
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "subjects": {
+      "buy": "Buying",
+      "sell": "Selling",
+      "visit": "Property viewing",
+      "alert": "Off-market alert",
+      "press": "Press",
+      "other": "Other"
+    },
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your project…",
+    "consent": "I agree that my data may be used to process my request, in accordance with the privacy policy.",
+    "required": "Required fields",
+    "submit": "Send",
+    "sending": "Sending…",
+    "errors": {
+      "required": "This field is required",
+      "email": "Invalid email address",
+      "phone": "Invalid phone number",
+      "min": "Please tell us a little more (20 characters minimum)",
+      "consent": "Your consent is required",
+      "number": "Please enter a valid number"
+    }
+  },
+  "errors": {
+    "notFound": {
+      "code": "404",
+      "eyebrow": "Error 404 — Page not found",
+      "title": "This plan",
+      "accent": "was never built.",
+      "text": "The page you're looking for has been moved, sold, or never left the drawing board.",
+      "cta": "View properties",
+      "suggestions": "Perhaps you were looking for"
+    },
+    "forbidden": {
+      "code": "403",
+      "eyebrow": "Error 403 — Restricted access",
+      "title": "This door",
+      "accent": "stays closed.",
+      "text": "The owner area is reserved for our clients, by invitation. If you've entrusted us with the sale of your house, your advisor will send you your access details.",
+      "cta": "Contact my advisor"
+    },
+    "error": {
+      "code": "500",
+      "eyebrow": "Error 500 — Technical incident",
+      "title": "A load-bearing wall",
+      "accent": "gave way.",
+      "text": "An unexpected error occurred. Our team has been notified; please try again in a moment.",
+      "retry": "Try again"
+    }
+  }
+}
