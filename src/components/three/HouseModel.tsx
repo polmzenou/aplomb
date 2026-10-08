@@ -193,7 +193,8 @@ export function HouseModel({ params, mode, labels }: { params: HouseParams; mode
         const v = l.vols[0];
         anchor.set((v.x ?? 0) - v.w / 2 - 0.6, (v.h ?? LEVEL_H) / 2, (v.z ?? 0) + v.d / 2);
         g.localToWorld(anchor).project(state.camera);
-        const x = ((anchor.x + 1) / 2) * state.size.width;
+        // Keep the label on screen when the anchor sits close to the left edge.
+        const x = Math.max(((anchor.x + 1) / 2) * state.size.width, label.offsetWidth + 8);
         const y = ((1 - anchor.y) / 2) * state.size.height;
         label.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) translate(-100%, -50%)`;
         label.style.opacity = e > 0.25 ? String(Math.min(1, (e - 0.25) * 3)) : "0";
