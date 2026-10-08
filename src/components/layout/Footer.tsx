@@ -110,8 +110,8 @@ export function Footer() {
 
         <div className="relative select-none pb-6 pt-10" aria-hidden="true">
           <div className="flex items-end justify-between gap-4">
-            <span className="display block text-[19.5vw] leading-[0.78] text-paper/[0.92] [font-variation-settings:'wdth'_125]">APLOMB</span>
-            <PlumbMark className="mb-[1.5vw] h-[12vw] w-[7.5vw] text-paper" animated />
+            <span className="display block text-[12vw] leading-[0.78] text-paper/[0.92] [font-variation-settings:'wdth'_125]">APLOMB</span>
+            <PlumbMark className="mb-[1vw] h-[10vw] w-[6.25vw] text-paper" animated />
           </div>
         </div>
         <div className="mono flex flex-col gap-2 pb-8 text-[0.62rem] uppercase tracking-[0.14em] text-paper/40 md:flex-row md:justify-between">

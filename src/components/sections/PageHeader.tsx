@@ -26,7 +26,7 @@ export function PageHeader({ eyebrow, title, accent, intro, crumbs, aside, class
         </div>
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className={aside ? "lg:col-span-8" : "lg:col-span-10"}>
-            <RevealText as="h1" text={title} immediate className="display text-[clamp(2.8rem,8.4vw,8.4rem)]" />
+            <RevealText as="h1" text={title} immediate className="display text-[clamp(1.85rem,8.4vw,8.4rem)]" />
             {accent && (
               <Reveal delay={0.3}>
                 <p className="accent mt-2 text-[clamp(1.8rem,4.2vw,4rem)] leading-none text-terra">{accent}</p>

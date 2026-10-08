@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion, type HTMLMotionProps } from "motion/react";
+import { useRef } from "react";
+import { motion, useInView, useReducedMotion, type HTMLMotionProps } from "motion/react";
 import { cn } from "@/lib/utils";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -40,16 +41,19 @@ export function RevealText({
   immediate?: boolean;
 }) {
   const reduce = useReducedMotion();
+  // Observe the heading itself: the masked words are clipped, so they never intersect on their own.
+  const ref = useRef<HTMLHeadingElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-5% 0px" });
+  const shown = immediate || inView;
   const words = text.split(" ");
   return (
-    <Tag className={cn(className)} aria-label={text}>
+    <Tag ref={ref} className={cn(className)} aria-label={text}>
       {words.map((w, i) => (
         <span key={i} aria-hidden="true" className="inline-block overflow-hidden pb-[0.08em] align-bottom">
           <motion.span
             className="inline-block"
             initial={reduce ? false : { y: "105%" }}
-            {...(immediate ? { animate: { y: "0%" } } : { whileInView: { y: "0%" } })}
-            viewport={{ once: true, margin: "-5% 0px" }}
+            animate={shown ? { y: "0%" } : undefined}
             transition={{ duration: 1, delay: delay + i * stagger, ease }}
           >
             {w}

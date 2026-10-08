@@ -227,7 +227,7 @@ export function PropertyExplorer() {
                 <PropertyCard key={p.slug} property={p} layout="list" highlighted={hovered === p.slug} onHover={setHovered} />
               ))}
             </div>
-            <div className="lg:col-span-7">
+            <div className="order-first lg:order-none lg:col-span-7">
               <FranceMap items={results} active={hovered} onHover={setHovered} className="aspect-[760/700] lg:sticky lg:top-24" />
             </div>
           </div>

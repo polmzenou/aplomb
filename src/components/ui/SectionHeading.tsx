@@ -31,7 +31,7 @@ export function SectionHeading({
         <span className={cn("eyebrow", dark && "text-paper/60")}>{eyebrow}</span>
         {align === "left" && <DrawLine className={cn("max-w-40 flex-1", dark ? "text-paper/25" : "text-line")} />}
       </div>
-      <RevealText as={as} text={title} className={cn("display text-[clamp(2.2rem,5.6vw,5.2rem)]", dark && "text-paper")} />
+      <RevealText as={as} text={title} className={cn("display text-[clamp(1.9rem,5.6vw,5.2rem)]", dark && "text-paper")} />
       {accent && (
         <p className={cn("accent mt-2 text-[clamp(1.6rem,3.4vw,3rem)] leading-none", dark ? "text-terra-soft" : "text-terra")}>{accent}</p>
       )}

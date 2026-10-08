@@ -43,7 +43,7 @@ export function PropertyHero({ property: p, crumbs }: { property: Property; crum
       <motion.div className="absolute inset-0" style={reduce ? undefined : { y, scale }}>
         <Image src={img(p.cover, 2200)} alt={p.title} fill priority sizes="100vw" className={p.status === "sold" ? "object-cover grayscale" : "object-cover"} />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/55 to-ink/50" />
       <div className="container-x relative flex h-full flex-col justify-between pb-10 pt-[calc(var(--header-h)+2rem)]">
         <Breadcrumbs
           dark

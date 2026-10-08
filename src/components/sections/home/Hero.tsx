@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 import { img } from "@/lib/images";
 import { cn, pad } from "@/lib/utils";
 import { useHeaderTheme } from "@/components/layout/HeaderTheme";
+import { LevelLabels } from "@/components/three/LevelLabels";
 import { SceneCanvas } from "@/components/three/SceneCanvas";
 import { ButtonLink } from "@/components/ui/Button";
 import { Blueprint, Cube, Moon, Sun } from "@/components/ui/Icons";
@@ -39,6 +40,7 @@ export function Hero() {
   const progress = useRef(0);
   const night = useRef(0);
   const nightTarget = useRef(0);
+  const labelRefs = useRef<(HTMLElement | null)[]>([]);
   const [isNight, setIsNight] = useState(false);
   const [blueprint, setBlueprint] = useState(false);
   const [explodePct, setExplodePct] = useState(0);
@@ -82,11 +84,12 @@ export function Hero() {
           camera={{ position: [30, 22, 34], fov: 30, near: 1, far: 200 }}
           fallback={<Image src={img("villaPoolTerrace", 1800)} alt="" fill priority sizes="100vw" className="object-cover" />}
         >
-          <HeroScene progress={progress} night={night} nightTarget={nightTarget} blueprint={blueprint} labels={levels} />
+          <HeroScene progress={progress} night={night} nightTarget={nightTarget} blueprint={blueprint} labels={labelRefs} />
         </SceneCanvas>
+        <LevelLabels labels={levels} refs={labelRefs} />
 
         {/* headline */}
-        <motion.div className="pointer-events-none relative z-10 flex h-full flex-col justify-between pb-6 pt-[calc(var(--header-h)+1.5rem)]" style={reduce ? undefined : { y: textY, opacity: textOpacity }}>
+        <motion.div className="pointer-events-none relative z-10 flex h-full flex-col justify-between pb-24 pt-[calc(var(--header-h)+1.5rem)] sm:pb-28" style={reduce ? undefined : { y: textY, opacity: textOpacity }}>
           <div className="container-x">
             <motion.p className="eyebrow mb-6 text-current opacity-70" initial={{ opacity: 0 }} animate={{ opacity: 0.7 }} transition={{ delay: 0.3, duration: 1 }}>
               {t("eyebrow")}
@@ -111,7 +114,7 @@ export function Hero() {
           </div>
           <div className="container-x grid items-end gap-6 md:grid-cols-12">
             <motion.div className="pointer-events-auto md:col-span-5 lg:col-span-4" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 1, ease }}>
-              <p className={cn("mb-6 max-w-sm text-[0.98rem] leading-relaxed", dark ? "text-paper/75" : "text-graphite")}>{t("intro")}</p>
+              <p className={cn("mb-6 hidden max-w-sm text-[0.98rem] leading-relaxed sm:block", dark ? "text-paper/75" : "text-graphite")}>{t("intro")}</p>
               <div className="flex flex-wrap gap-3">
                 <ButtonLink href="/biens" variant={dark ? "light" : "ink"}>
                   {t("cta")}
@@ -143,7 +146,7 @@ export function Hero() {
                   <Blueprint className="h-3.5 w-3.5" /> {t("blueprint")}
                 </Toggle>
               </div>
-              <p className="mono flex items-center gap-3 text-[0.62rem] uppercase tracking-[0.14em] opacity-60">
+              <p className="mono hidden items-center gap-3 text-[0.62rem] uppercase tracking-[0.14em] opacity-60 sm:flex">
                 <span className="relative block h-6 w-px overflow-hidden bg-current/30">
                   <motion.span className="absolute inset-x-0 top-0 h-1/2 bg-current" animate={{ y: ["-100%", "200%"] }} transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }} />
                 </span>

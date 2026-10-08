@@ -70,7 +70,7 @@ function Sealed() {
     if (slit.current) slit.current.emissiveIntensity = 1.6 + Math.sin(state.clock.elapsedTime * 1.4) * 0.6;
   });
   return (
-    <group ref={group}>
+    <group ref={group} scale={1.45}>
       <mesh castShadow receiveShadow>
         <boxGeometry args={[6, 7, 6]} />
         <meshStandardMaterial color="#cdc8bf" roughness={0.95} />

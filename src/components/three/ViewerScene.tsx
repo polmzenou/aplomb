@@ -5,7 +5,7 @@ import { useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import type { HouseParams } from "@/data/types";
-import { HouseModel } from "./HouseModel";
+import { HouseModel, type LabelRefs } from "./HouseModel";
 import { Stage } from "./Stage";
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
   nightTarget: RefObject<number>;
   explodeTarget: RefObject<number>;
   blueprint: boolean;
-  labels: string[];
+  labels: LabelRefs;
 };
 
 /** Orbitable model for a listing page. */
@@ -32,7 +32,7 @@ export function ViewerScene({ params, nightTarget, explodeTarget, blueprint, lab
     <>
       <Stage night={night} blueprint={blueprint} shadowSize={span * 0.7} />
       <group position={[0, -2, 0]}>
-        <HouseModel params={params} mode={{ night, explode, blueprint }} levelLabels={labels} />
+        <HouseModel params={params} mode={{ night, explode, blueprint }} labels={labels} />
       </group>
       <OrbitControls
         makeDefault

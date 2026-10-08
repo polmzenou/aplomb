@@ -3,7 +3,7 @@
 
 import { useMemo, useRef, type RefObject } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Edges, Html } from "@react-three/drei";
+import { Edges } from "@react-three/drei";
 import * as THREE from "three";
 import type { Finish, HouseParams, Side, Volume } from "@/data/types";
 
@@ -12,6 +12,12 @@ const WALL = 0.28;
 const SLAB = 0.32;
 
 export type SceneMode = { night: RefObject<number>; explode: RefObject<number>; blueprint: boolean };
+
+/**
+ * DOM labels rendered by the page next to the canvas (one per level). The model only positions them,
+ * so no React root lives inside the three.js tree.
+ */
+export type LabelRefs = RefObject<(HTMLElement | null)[]>;
 
 const FINISH: Record<Finish, string> = {
   concrete: "#cdc8bf",
@@ -103,7 +109,7 @@ function GlassWall({ length, height, position, rotation, m, blueprint }: { lengt
   );
 }
 
-function VolumeMesh({ v, m, blueprint, labels, labelRef }: { v: Volume; m: Mats; blueprint: boolean; labels?: string; labelRef?: (el: HTMLDivElement | null) => void }) {
+function VolumeMesh({ v, m, blueprint }: { v: Volume; m: Mats; blueprint: boolean }) {
   const h = v.h ?? LEVEL_H;
   const wallH = h - SLAB;
   const glass = new Set<Side>(v.glass ?? []);
@@ -133,14 +139,6 @@ function VolumeMesh({ v, m, blueprint, labels, labelRef }: { v: Volume; m: Mats;
       )}
       {/* roof slab */}
       <Block size={[v.w + 0.5, SLAB, v.d + 0.5]} position={[0, h + SLAB / 2, 0]} material={m.finish[v.finish === "wood" || v.finish === "dark" ? v.finish : "white"]} blueprint={blueprint} />
-      {labels && (
-        <Html position={[v.w / 2 + 0.6, h / 2, v.d / 2]} center={false} zIndexRange={[20, 0]} style={{ pointerEvents: "none" }}>
-          <div ref={labelRef} className="mono flex items-center gap-2 whitespace-nowrap text-[10px] uppercase tracking-[0.14em] text-ink opacity-0 transition-opacity duration-500">
-            <span className="h-px w-8 bg-terra" />
-            <span className="bg-paper/90 px-1.5 py-0.5">{labels}</span>
-          </div>
-        </Html>
-      )}
     </group>
   );
 }
@@ -163,7 +161,7 @@ function Tree({ x, z, s, m, blueprint }: { x: number; z: number; s: number; m: M
  * Architectural scale model generated from a HouseParams description.
  * `mode.explode` (0–1) lifts each level apart; `mode.night` (0–1) lights the interior.
  */
-export function HouseModel({ params, mode, levelLabels }: { params: HouseParams; mode: SceneMode; levelLabels?: string[] }) {
+export function HouseModel({ params, mode, labels }: { params: HouseParams; mode: SceneMode; labels?: LabelRefs }) {
   const m = useMaterials(mode.blueprint);
   const levels = useMemo(() => {
     const byLevel = new Map<number, Volume[]>();
@@ -180,17 +178,26 @@ export function HouseModel({ params, mode, levelLabels }: { params: HouseParams;
   }, [params]);
 
   const groups = useRef<(THREE.Group | null)[]>([]);
-  const labelEls = useRef<(HTMLDivElement | null)[]>([]);
+  const anchor = useMemo(() => new THREE.Vector3(), []);
   const lights = useRef<(THREE.PointLight | null)[]>([]);
 
-  useFrame(() => {
+  useFrame((state) => {
     const e = mode.explode.current ?? 0;
     const n = mode.night.current ?? 0;
     levels.forEach((l, i) => {
       const g = groups.current[i];
       if (g) g.position.y = THREE.MathUtils.lerp(g.position.y, l.base + i * e * 3.4, 0.12);
-      const label = labelEls.current[i];
-      if (label) label.style.opacity = e > 0.25 ? String(Math.min(1, (e - 0.25) * 3)) : "0";
+      // Project the left edge of the level's main volume to screen space and move its label there.
+      const label = labels?.current?.[i];
+      if (label && g) {
+        const v = l.vols[0];
+        anchor.set((v.x ?? 0) - v.w / 2 - 0.6, (v.h ?? LEVEL_H) / 2, (v.z ?? 0) + v.d / 2);
+        g.localToWorld(anchor).project(state.camera);
+        const x = ((anchor.x + 1) / 2) * state.size.width;
+        const y = ((1 - anchor.y) / 2) * state.size.height;
+        label.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) translate(-100%, -50%)`;
+        label.style.opacity = e > 0.25 ? String(Math.min(1, (e - 0.25) * 3)) : "0";
+      }
       const light = lights.current[i];
       if (light) light.intensity = n * 14;
     });
@@ -222,14 +229,7 @@ export function HouseModel({ params, mode, levelLabels }: { params: HouseParams;
       {levels.map((l, i) => (
         <group key={l.level} ref={(el) => void (groups.current[i] = el)} position={[0, l.base, 0]}>
           {l.vols.map((v, j) => (
-            <VolumeMesh
-              key={j}
-              v={v}
-              m={m}
-              blueprint={mode.blueprint}
-              labels={j === 0 ? levelLabels?.[i] : undefined}
-              labelRef={j === 0 ? (el) => void (labelEls.current[i] = el) : undefined}
-            />
+            <VolumeMesh key={j} v={v} m={m} blueprint={mode.blueprint} />
           ))}
           {!mode.blueprint && (
             <pointLight

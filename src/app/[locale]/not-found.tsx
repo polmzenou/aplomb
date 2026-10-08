@@ -1,8 +1,11 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { mainNav } from "@/lib/nav";
 import { ErrorView } from "@/components/sections/ErrorView";
 import { ButtonLink } from "@/components/ui/Button";
+
+export const metadata: Metadata = { title: "404", robots: { index: false } };
 
 export default async function NotFound() {
   const t = await getTranslations("errors.notFound");

@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import type { Property } from "@/data/types";
 import { img } from "@/lib/images";
 import { cn } from "@/lib/utils";
+import { LevelLabels } from "@/components/three/LevelLabels";
 import { SceneCanvas } from "@/components/three/SceneCanvas";
 import { Blueprint, Cube, Layers, Moon, Sun } from "@/components/ui/Icons";
 
@@ -35,6 +36,7 @@ export function ModelViewer({ property: p }: { property: Property }) {
   const [blueprint, setBlueprint] = useState(false);
   const nightTarget = useRef(0);
   const explodeTarget = useRef(0);
+  const labelRefs = useRef<(HTMLElement | null)[]>([]);
   const dark = night || blueprint;
 
   useEffect(() => {
@@ -42,6 +44,7 @@ export function ModelViewer({ property: p }: { property: Property }) {
     explodeTarget.current = exploded ? 1 : 0;
   }, [night, exploded]);
 
+  const span = Math.max(p.model.site.w, p.model.site.d);
   const levelCount = new Set(p.model.volumes.map((v) => v.level)).size;
   const labels = Array.from({ length: levelCount }, (_, i) => t("levelLabel", { n: i }));
 
@@ -51,11 +54,12 @@ export function ModelViewer({ property: p }: { property: Property }) {
         className="absolute inset-0"
         label={t("modelLabel", { title: p.title })}
         shadows
-        camera={{ position: [32, 24, 36], fov: 30, near: 1, far: 300 }}
+        camera={{ position: [span * 0.95, span * 0.7, span * 1.05], fov: 30, near: 1, far: 400 }}
         fallback={<Image src={img(p.cover, 1400)} alt="" fill sizes="100vw" className="object-cover" />}
       >
-        <ViewerScene params={p.model} nightTarget={nightTarget} explodeTarget={explodeTarget} blueprint={blueprint} labels={labels} />
+        <ViewerScene params={p.model} nightTarget={nightTarget} explodeTarget={explodeTarget} blueprint={blueprint} labels={labelRefs} />
       </SceneCanvas>
+      <LevelLabels labels={labels} refs={labelRefs} />
       <div className={cn("absolute left-3 top-3 flex flex-wrap border backdrop-blur-sm", dark ? "border-paper/30 bg-ink/40 text-paper" : "border-ink/20 bg-paper/70")}>
         <Btn active={!night} onClick={() => setNight(false)} dark={dark}>
           <Sun className="h-3.5 w-3.5" /> {t("controls.day")}

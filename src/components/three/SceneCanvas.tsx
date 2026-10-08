@@ -32,7 +32,7 @@ export function SceneCanvas({ className, fallback, label, children, ...props }: 
   }, []);
 
   return (
-    <div ref={ref} className={cn("relative", className)} role="img" aria-label={label}>
+    <div ref={ref} className={cn("absolute inset-0", className)} role="img" aria-label={label}>
       {supported === false
         ? fallback
         : supported && (

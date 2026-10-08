@@ -53,7 +53,7 @@ export function Testimonials() {
           </div>
         </div>
         <div className="relative min-h-[18rem] md:col-span-8 md:col-start-5" aria-live="polite">
-          <span className="accent pointer-events-none absolute -left-2 -top-16 text-[10rem] leading-none text-terra/25" aria-hidden="true">
+          <span className="accent pointer-events-none absolute -left-2 -top-16 hidden text-[10rem] md:block leading-none text-terra/25" aria-hidden="true">
             “
           </span>
           <AnimatePresence mode="wait">
